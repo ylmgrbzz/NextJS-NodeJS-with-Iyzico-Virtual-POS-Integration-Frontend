@@ -1,3 +1,9 @@
+import FormPayment from "@/components/FormPayment";
+
 export default function Home() {
-  return <div>ylm</div>;
+  return (
+    <div>
+      <FormPayment />
+    </div>
+  );
 }
