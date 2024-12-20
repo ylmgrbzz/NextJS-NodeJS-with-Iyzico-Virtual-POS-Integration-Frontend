@@ -11,7 +11,7 @@ const FormPayment = () => {
   const [expireYear, setExpireYear] = useState("");
   const [cvc, setCvc] = useState("");
   const [holderName, setHolderName] = useState("");
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState<{ status: string } | null>(null);
 
   const handlePayment = async () => {
     const paymentCard = {
@@ -144,6 +144,8 @@ const FormPayment = () => {
         {response && (
           <div className="bg-slate-200 border-2 rounded-lg p-10">
             <h2>Sonuç:</h2>
+
+            <p>Ödeme Başarılı: {response.status}</p>
             <pre>{JSON.stringify(response, null, 2)}</pre>
           </div>
         )}
